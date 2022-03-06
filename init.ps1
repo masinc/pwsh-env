@@ -1,6 +1,9 @@
 # encoding
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
+# append PATH environment variable
+$env:PATH += ";~\bin"
+
 # append \bins\* to the PATH environment variable
 Get-ChildItem -Directory "$PSScriptRoot\bins"
 | ForEach-Object { $env:PATH += ";" + $_.FullName }
