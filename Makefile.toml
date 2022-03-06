@@ -1,0 +1,22 @@
+[config]
+skip_core_tasks = true
+
+[tasks.install-deps.windows]
+script = [
+    'scoop update',
+    'scoop bucket add extras',
+    'scoop install busybox-lean starship bottom dust fs fzf jq lsd procs ripgrep sudo zoxide posh-git',
+]
+
+[tasks.install.windows]
+script_runner = '@shell'
+script = [
+    'mkdir -p bins/busybox',
+    'busybox --install bins/busybox',
+    'mkdir init.generated.d',
+    "kubectl completion powershell > init.generated.d/kubectl.ps1",
+]
+
+[tasks.clean]
+script_runner = '@shell'
+script = ['rm -rf bins/', 'rm -rf init.generated.d/']
