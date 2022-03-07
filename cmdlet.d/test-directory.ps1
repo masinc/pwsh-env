@@ -1,4 +1,8 @@
 function Test-Directory(
+    [Parameter(
+        Mandatory = $true,
+        ValueFromPipeline = $true
+    )]
     $Path
 ) {    
     $type = $Path.GetType()
