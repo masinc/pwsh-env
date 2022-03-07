@@ -1,5 +1,6 @@
 # encoding
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
+[System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # append PATH environment variable
 $env:PATH += ";~\bin"
