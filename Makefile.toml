@@ -5,7 +5,7 @@ skip_core_tasks = true
 script = [
     'scoop update',
     'scoop bucket add extras',
-    'scoop install busybox-lean starship bottom dust fs fzf jq lsd procs ripgrep sudo zoxide posh-git',
+    'scoop install busybox-lean starship bottom dust fs fzf jq lsd procs ripgrep sudo zoxide ghq posh-git',
 ]
 
 [tasks.install.windows]
