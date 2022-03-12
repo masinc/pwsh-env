@@ -1,8 +1,15 @@
 Get-Command ghq >$null
 
 if ($?) {
-    function Select-Ghq-Repository {
-        "$(ghq root)\$((ghq list) -replace "/", "\"  | fzf --preview 'ghq show -p {1}')"
+
+    function Select-Ghq-Repository (
+        [Parameter(Mandatory = $false)]
+        [string]
+        $pattern = ""
+    ) {
+        (ghq list -p "$pattern") -replace "/", "\"  | fzf --preview 'ghq show -p {1}'
+    }
+
     }
 
     function __ghq__cd__ {
