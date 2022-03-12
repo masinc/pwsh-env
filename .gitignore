@@ -1,2 +1,4 @@
 bins/
 *.generated.d/
+.path
+*.log
