@@ -3,7 +3,10 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # append PATH environment variable
+if ($env:PATH -notcontains ";~\bin") {
 $env:PATH += ";~\bin"
+}
+
 
 # append \bins\* to the PATH environment variable
 Get-ChildItem -Directory "$PSScriptRoot\bins"
