@@ -4,9 +4,17 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
 # append PATH environment variable
 if ($env:PATH -notcontains ";~\bin") {
-$env:PATH += ";~\bin"
+    $env:PATH += ";~\bin"
 }
 
+if (Test-Path "$PSScriptRoot\.path") {
+    Get-Content "$PSScriptRoot\.path" 
+    | ForEach-Object {
+        if ((Test-Path $_) -and ($env:PATH -notcontains $_)) {
+            $env:PATH += ";$_"
+        }
+    }
+}
 
 # append \bins\* to the PATH environment variable
 Get-ChildItem -Directory "$PSScriptRoot\bins"
