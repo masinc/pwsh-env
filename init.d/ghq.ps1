@@ -10,6 +10,14 @@ if ($?) {
         (ghq list -p "$pattern") -replace "/", "\"  | fzf --preview 'ghq show -p {1}'
     }
 
+    function Get-Ghq-Repository (
+        [Parameter(
+            Mandatory = $true
+        )]
+        [string]
+        $url
+    ) {
+        ghq get $url --shallow
     }
 
     function __ghq__cd__ {
