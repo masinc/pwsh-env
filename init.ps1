@@ -7,6 +7,10 @@ if ($env:PATH -notcontains ";~\bin") {
     $env:PATH += ";~\bin"
 }
 
+if ($env:PATH -notcontains ";$PSScriptRoot\node_modules\.bin") {
+    $env:PATH += ";$PSScriptRoot\node_modules\.bin"
+}
+
 if (Test-Path "$PSScriptRoot\.path") {
     Get-Content "$PSScriptRoot\.path" 
     | ForEach-Object {

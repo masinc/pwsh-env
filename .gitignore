@@ -2,3 +2,8 @@ bins/
 *.generated.d/
 .path
 *.log
+
+
+# pnpm
+node_modules/
+pnpm-lock.yaml

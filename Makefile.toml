@@ -11,6 +11,7 @@ script = [
 [tasks.install.windows]
 script_runner = '@shell'
 script = [
+    'pnpm install',
     'mkdir -p bins/busybox',
     'busybox --install bins/busybox',
     'mkdir init.generated.d',
@@ -19,4 +20,4 @@ script = [
 
 [tasks.clean]
 script_runner = '@shell'
-script = ['rm -rf bins/', 'rm -rf init.generated.d/']
+script = ['rm -rf bins/', 'rm -rf init.generated.d/', 'rm -rf node_modules/']
