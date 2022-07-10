@@ -26,4 +26,6 @@ if ($?) {
 
     Set-Alias ghq-select Select-Ghq-Repository
     Set-Alias ghq-cd __ghq__cd__
+    Set-Alias ghq-clone Get-Ghq-Repository
+    Set-Alias ghq-get Get-Ghq-Repository
 }
