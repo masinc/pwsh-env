@@ -8,14 +8,20 @@ script = [
     'scoop install busybox-lean starship bottom dust fs fzf jq lsd procs ripgrep sudo zoxide ghq posh-git',
 ]
 
+[tasks.generate-completion]
+script_runner = "@shell"
+script = [
+    'mkdir -p init.generated.d',
+    "kubectl completion powershell > init.generated.d/kubectl.ps1",
+]
+
 [tasks.install.windows]
+dependencies = ["generate-completion"]
 script_runner = '@shell'
 script = [
     'pnpm install',
     'mkdir -p bins/busybox',
     'busybox --install bins/busybox',
-    'mkdir init.generated.d',
-    "kubectl completion powershell > init.generated.d/kubectl.ps1",
 ]
 
 [tasks.clean]
