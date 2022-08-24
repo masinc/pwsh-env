@@ -24,6 +24,10 @@ if (Test-Path "$PSScriptRoot\.path") {
 Get-ChildItem -Directory "$PSScriptRoot\bins"
 | ForEach-Object { $env:PATH += ";" + $_.FullName }
 
+# load cmdlet.d\*.ps1
+Get-ChildItem "$PSScriptRoot\cmdlet.d\*.ps1"
+| ForEach-Object { . $_.FullName }
+
 # load init.d\*.ps1
 Get-ChildItem "$PSScriptRoot\init.d\*.ps1"
 | ForEach-Object { . $_.FullName }
@@ -33,10 +37,6 @@ if (Test-Path "$PSScriptRoot\init.d\*.ps1") {
     Get-ChildItem "$PSScriptRoot\init.generated.d\*.ps1"
     | ForEach-Object { . $_.FullName }
 }
-
-# load cmdlet.d\*.ps1
-Get-ChildItem "$PSScriptRoot\cmdlet.d\*.ps1"
-| ForEach-Object { . $_.FullName }
 
 # load alias.d\*.ps1
 Get-ChildItem "$PSScriptRoot\alias.d\*.ps1"

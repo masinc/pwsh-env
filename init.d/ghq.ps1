@@ -1,6 +1,4 @@
-Get-Command ghq >$null
-
-if ($?) {
+if (Test-Command ghq) {
 
     function Select-Ghq-Repository (
         [Parameter(Mandatory = $false)]

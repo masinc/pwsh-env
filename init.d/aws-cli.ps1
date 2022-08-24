@@ -1,10 +1,12 @@
-Register-ArgumentCompleter -Native -CommandName aws -ScriptBlock {
-    param($commandName, $wordToComplete, $cursorPosition)
-    $env:COMP_LINE = $wordToComplete
-    $env:COMP_POINT = $cursorPosition
-    aws_completer.exe | ForEach-Object {
-        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+if (Test-Command aws) {
+    Register-ArgumentCompleter -Native -CommandName aws -ScriptBlock {
+        param($commandName, $wordToComplete, $cursorPosition)
+        $env:COMP_LINE = $wordToComplete
+        $env:COMP_POINT = $cursorPosition
+        aws_completer.exe | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+        Remove-Item Env:\COMP_LINE     
+        Remove-Item Env:\COMP_POINT  
     }
-    Remove-Item Env:\COMP_LINE     
-    Remove-Item Env:\COMP_POINT  
 }

@@ -1,6 +1,4 @@
-
-Get-Command nvim >$null
-if ($?) {
+if (Test-Command nvim) {
     function __view__ {
         nvim -R $args
     }

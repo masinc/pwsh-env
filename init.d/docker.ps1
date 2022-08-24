@@ -1,2 +1,3 @@
-# Install-Module DockerCompletion -Scope CurrentUser
-Import-Module DockerCompletion
+if (Test-Command docker) {
+    Import-Module DockerCompletion
+}

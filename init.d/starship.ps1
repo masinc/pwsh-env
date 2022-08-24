@@ -1,5 +1,3 @@
-Get-Command starship >$null
-
-if ($?) {
+if (Test-Command starship) {
     Invoke-Expression (&starship init powershell)
 }

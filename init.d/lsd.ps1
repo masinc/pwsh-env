@@ -1,6 +1,4 @@
-Get-Command lsd >$null
-
-if ($?) {
+if (Test-Command lsd) {
     function __ll__ {
         lsd -l $args
     }
