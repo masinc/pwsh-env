@@ -1,0 +1,31 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  install-deps:
+    cmds:
+      - scoop update
+      - scoop install busybox-lean starship bottom dust fs fzf jq lsd procs ripgrep sudo zoxide ghq posh-git
+    silent: true
+  generate-completion:
+    cmds:
+      - mkdir -p init.generated.d/
+      - kubectl completion powershell > "init.generated.d/kubectl.ps1"
+  install:
+    deps:
+      - install-deps
+      - generate-completion
+    cmds:
+      - pnpm install
+      - mkdir -p bin/busybox
+      - busybox --install bins/busybox
+    silent: true
+  update:
+    cmds:
+      - pnpm update
+  clean:
+    cmds:
+      - rm -rf bins/
+      - rm -rf init.generated.d/
+      - rm -rf node_modules/
