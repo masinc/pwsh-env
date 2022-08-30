@@ -10,8 +10,7 @@ tasks:
     silent: true
   generate-completion:
     cmds:
-      - mkdir -p init.generated.d/
-      - kubectl completion powershell > "init.generated.d/kubectl.ps1"
+      - pwsh -File ./completion.generate.ps1
   install:
     deps:
       - install-deps
@@ -22,6 +21,8 @@ tasks:
       - busybox --install bins/busybox
     silent: true
   update:
+    deps:
+      - generate-completion
     cmds:
       - pnpm update
   clean:
