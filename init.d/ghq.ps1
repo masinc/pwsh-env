@@ -1,6 +1,6 @@
 if (Test-Command ghq) {
 
-    function Select-Ghq-Repository (
+    function Select-GhqRepository (
         [Parameter(Mandatory = $false)]
         [string]
         $pattern = ""
@@ -8,7 +8,7 @@ if (Test-Command ghq) {
         (ghq list -p "$pattern") -replace "/", "\"  | fzf --preview 'ghq show -p {1}'
     }
 
-    function Get-Ghq-Repository (
+    function Import-GhqRepository (
         [Parameter(
             Mandatory = $true
         )]
@@ -18,12 +18,18 @@ if (Test-Command ghq) {
         ghq get $url --shallow
     }
 
-    function __ghq__cd__ {
-        Set-Location "$(Select-Ghq-Repository)"
+    function Enter-GhqLocation {
+        Set-Location "$(Select-GhqRepository)"
     }
 
-    Set-Alias ghq-select Select-Ghq-Repository
-    Set-Alias ghq-cd __ghq__cd__
-    Set-Alias ghq-clone Get-Ghq-Repository
-    Set-Alias ghq-get Get-Ghq-Repository
+    function Get-GhqRepository {
+        $root = $(ghq root)
+        ghq list | ForEach-Object { $root + $_ }
+    }
+
+    Set-Alias ghq-select Select-GhqRepository
+    Set-Alias ghq-cd Enter-GhqLocation
+    Set-Alias ghq-clone Import-GhqRepository
+    Set-Alias ghq-get Import-GhqRepository
+    Set-Alias ghq-list Get-GhqRepository
 }
