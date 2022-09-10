@@ -5,7 +5,7 @@ if (Test-Command ghq) {
         [string]
         $pattern = ""
     ) {
-        (ghq list -p "$pattern") -replace "/", "\"  | fzf --preview 'ghq show -p {1}'
+        ghq list -p "$pattern" | fzf --preview 'ghq show -p {1}'
     }
 
     function Import-GhqRepository (
@@ -22,8 +22,12 @@ if (Test-Command ghq) {
         Set-Location "$(Select-GhqRepository)"
     }
 
-    function Get-GhqRepository {        
-        ghq list -p
+    function Get-GhqRepository (
+        [Parameter(Mandatory = $false)]
+        [string]
+        $pattern = ""
+    ) {                
+        ghq list -p "$pattern"
     }
 
     Set-Alias ghq-select Select-GhqRepository
