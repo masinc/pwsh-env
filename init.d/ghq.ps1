@@ -22,9 +22,8 @@ if (Test-Command ghq) {
         Set-Location "$(Select-GhqRepository)"
     }
 
-    function Get-GhqRepository {
-        $root = $(ghq root)
-        ghq list | ForEach-Object { $root + $_ }
+    function Get-GhqRepository {        
+        ghq list -p
     }
 
     Set-Alias ghq-select Select-GhqRepository
