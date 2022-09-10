@@ -1,3 +1,6 @@
-if (Test-Command git) {
-    Import-Module posh-git
+if (-not (Test-Command git)) {
+    return
 }
+
+Import-Module posh-git
+

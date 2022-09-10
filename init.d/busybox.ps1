@@ -1,3 +1,5 @@
-if (Test-Command busybox) {
-    [System.Environment]::SetEnvironmentVariable("LANG", "C.UTF-8")
+if (-not (Test-Command busybox)) {
+    return
 }
+
+[System.Environment]::SetEnvironmentVariable("LANG", "C.UTF-8")

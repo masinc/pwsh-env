@@ -1,3 +1,6 @@
-if (Test-Command starship) {
-    Invoke-Expression (&starship init powershell)
+if (-not (Test-Command starship)) {
+    return
 }
+
+
+Invoke-Expression (&starship init powershell)

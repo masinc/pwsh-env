@@ -1,3 +1,5 @@
-if (Test-Command docker) {
-    Import-Module DockerCompletion
+if (-not (Test-Command docker)) {
+    return
 }
+
+Import-Module DockerCompletion
