@@ -1,3 +1,5 @@
-if (Test-Command kubectl) {
-    Set-Alias -Name k -Value kubectl
+if (-not (Test-Command kubectl)) {
+    return
 }
+
+Set-Alias -Name k -Value kubectl
