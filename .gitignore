@@ -6,7 +6,6 @@ bins/
 
 # pnpm
 node_modules/
-pnpm-lock.yaml
 
 
 .idea/
