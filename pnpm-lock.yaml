@@ -2,12 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   aws-cdk: ^2.44.0
-  cdk8s-cli: ^2.1.0
+  cdk8s-cli: ^2.1.4
   quicktype: ^15.1.0
 
 dependencies:
   aws-cdk: 2.44.0
-  cdk8s-cli: 2.1.0
+  cdk8s-cli: 2.1.4
   quicktype: 15.1.0
 
 packages:
@@ -206,22 +206,22 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
-  /cdk8s-cli/2.1.0:
-    resolution: {integrity: sha512-8s+KpKBpBka5oW3Lm64gbA/GxZ8vcCEtpSRq23UU6zHpSsar3DXooY0xVk8itAmmagqpeQcy1iL1JTmlLIPtDQ==}
+  /cdk8s-cli/2.1.4:
+    resolution: {integrity: sha512-4nn+uEKsf341n3bJymCBCis8WoVfa0eXH9wBa576RMntRFRorytcQ8una1y/FQzvxTe+aDyxY4/6SJxm4cP6YQ==}
     engines: {node: '>= 14.17.0'}
     hasBin: true
     dependencies:
       '@types/node': 14.18.31
       ajv: 8.11.0
-      cdk8s: 2.5.3_constructs@10.1.117
-      cdk8s-plus-22: 2.0.0-rc.135_ql6wstpnyl6rgbxbc5cmo75wdy
+      cdk8s: 2.5.6_constructs@10.1.121
+      cdk8s-plus-22: 2.0.0-rc.138_f6y66isdqqtczl63d6ckpoybfq
       codemaker: 1.69.0
       colors: 1.4.0
-      constructs: 10.1.117
+      constructs: 10.1.121
       fs-extra: 8.1.0
       jsii-pacmak: 1.69.0
-      jsii-srcmak: 0.1.690
-      json2jsii: 0.3.137
+      jsii-srcmak: 0.1.692
+      json2jsii: 0.3.141
       semver: 7.3.7
       sscaff: 1.2.274
       table: 6.8.0
@@ -231,26 +231,26 @@ packages:
       - supports-color
     dev: false
 
-  /cdk8s-plus-22/2.0.0-rc.135_ql6wstpnyl6rgbxbc5cmo75wdy:
-    resolution: {integrity: sha512-xOCz1+H4W367RSPobjHUNIXcuNQzYPRqqUwrCqkoQB8E78d/Uchqfe4hf49pQbINr72nRUVr0a19u0zdNdHT1Q==}
+  /cdk8s-plus-22/2.0.0-rc.138_f6y66isdqqtczl63d6ckpoybfq:
+    resolution: {integrity: sha512-muVypTQfgiQqpgX/TOPHuTN8iOeVUoAG7+x7yKNA5FnLmsGA/fBaknsMNOb44zQEzMn32/1XVjt9b9dLv4GKxQ==}
     engines: {node: '>= 14.17.0'}
     peerDependencies:
-      cdk8s: ^2.5.3
-      constructs: ^10.1.117
+      cdk8s: ^2.5.4
+      constructs: ^10.1.120
     dependencies:
-      cdk8s: 2.5.3_constructs@10.1.117
-      constructs: 10.1.117
+      cdk8s: 2.5.6_constructs@10.1.121
+      constructs: 10.1.121
     dev: false
     bundledDependencies:
       - minimatch
 
-  /cdk8s/2.5.3_constructs@10.1.117:
-    resolution: {integrity: sha512-c3BPj+h4o8KTBRRAyl7xTPhMRTEFdyEgkGVdNEPXF3LuzVyhzHJYExy3ulh7c3y6nLTv7GLiwD/6CDtk8bok9w==}
+  /cdk8s/2.5.6_constructs@10.1.121:
+    resolution: {integrity: sha512-21Z567O4Ffvur5seeE9FxOjWkuwQ09FKSgjoDsRBDCRATJJpIIkjgwhlMV9F6VDkbovUgBOPqjpY0jXUYXRBNQ==}
     engines: {node: '>= 14.17.0'}
     peerDependencies:
       constructs: ^10
     dependencies:
-      constructs: 10.1.117
+      constructs: 10.1.121
     dev: false
     bundledDependencies:
       - fast-json-patch
@@ -390,8 +390,8 @@ packages:
       typedarray: 0.0.6
     dev: false
 
-  /constructs/10.1.117:
-    resolution: {integrity: sha512-6Y1Po8yr1M/WAtamLL4kKXIWygky2rYPD4cpea9fKoI6fqtSSOy5TWmYoWXtLMS9hpi/v3XnLY+MjPsa6bMooQ==}
+  /constructs/10.1.121:
+    resolution: {integrity: sha512-D3aE7RvLa5o66B3rFG25vmRoqLL/UUGG/OH6mjQFrlN+wjKusPVbRak2QJPyehPPPn4uFraZgtV3rzD+tULE5g==}
     engines: {node: '>= 14.17.0'}
     dev: false
 
@@ -897,8 +897,8 @@ packages:
       - supports-color
     dev: false
 
-  /jsii-srcmak/0.1.690:
-    resolution: {integrity: sha512-Wr/4VkZtALPplodMfu7EmRwdyLOtLHg23Akjjl65W+WPHRUX/owhNDL0WLFPjdFjV9jz1LsY3J6n1NAJZX0Bgw==}
+  /jsii-srcmak/0.1.692:
+    resolution: {integrity: sha512-IYJ8Crm1i5yf4FfJRZ5+wcVDlCxai29u25mgkm5eASba6anvRm1tefQz6EqEdUupBiurM5HTwvgCcCNGVs1CAQ==}
     hasBin: true
     dependencies:
       fs-extra: 9.1.0
@@ -921,7 +921,7 @@ packages:
       chalk: 4.1.2
       fast-deep-equal: 3.1.3
       fs-extra: 10.1.0
-      log4js: 6.6.1
+      log4js: 6.7.0
       semver: 7.3.7
       semver-intersect: 1.4.0
       sort-json: 2.0.1
@@ -946,8 +946,8 @@ packages:
       jsonify: 0.0.0
     dev: false
 
-  /json2jsii/0.3.137:
-    resolution: {integrity: sha512-ZzvYWncw8YWhaE8k7qRO7udS+T3QUXm7lJPP2WmDrbGhVjv64ZRx6ejnHcHErRw49dCGMjix7lfytDy7Zw6zaQ==}
+  /json2jsii/0.3.141:
+    resolution: {integrity: sha512-RtpHsl68tLviTiYMEi6LTKk5TAEUPRNvJJ1pYMF+fYWpIz2XyjqKz0fDdxp67/1RGUHAOR3uZlkTkEgSJ3Sqww==}
     engines: {node: '>= 14.17.0'}
     dependencies:
       camelcase: 6.3.0
@@ -1015,8 +1015,8 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
-  /log4js/6.6.1:
-    resolution: {integrity: sha512-J8VYFH2UQq/xucdNu71io4Fo+purYYudyErgBbswWKO0MC6QVOERRomt5su/z6d3RJSmLyTGmXl3Q/XjKCf+/A==}
+  /log4js/6.7.0:
+    resolution: {integrity: sha512-KA0W9ffgNBLDj6fZCq/lRbgR6ABAodRIDHrZnS48vOtfKa4PzWImb0Md1lmGCdO3n3sbCm/n1/WmrNlZ8kCI3Q==}
     engines: {node: '>=8.0'}
     dependencies:
       date-format: 4.0.14
