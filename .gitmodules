@@ -1,0 +1,3 @@
+[submodule "psmodules"]
+	path = psmodules
+	url = https://github.com/masinc/psmodules
