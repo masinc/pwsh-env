@@ -2,6 +2,9 @@
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
+# add pwsh modules
+. (Join-Path $PSScriptRoot "psmodules" "import.ps1")
+
 # append PATH environment variable
 if ($env:PATH -notcontains ";~\bin") {
     $env:PATH += ";~\bin"
