@@ -5,6 +5,11 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 # add pwsh modules
 . (Join-Path $PSScriptRoot "psmodules" "import.ps1")
 
+# import env
+if (Test-Path "$PSScriptRoot\.env.ps1") {
+    . $PSScriptRoot\.env.ps1
+}
+
 # append PATH environment variable
 if ($env:PATH -notcontains ";~\bin") {
     $env:PATH += ";~\bin"
