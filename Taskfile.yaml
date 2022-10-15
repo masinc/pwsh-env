@@ -18,7 +18,6 @@ tasks:
       - generate-completion
     cmds:
       - pnpm install
-      - mkdir -p bin/busybox
       - busybox --install bins/busybox
     silent: true
   update:
