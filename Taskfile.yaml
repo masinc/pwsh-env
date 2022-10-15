@@ -6,7 +6,7 @@ tasks:
   install-deps:
     cmds:
       - scoop update
-      - scoop install task kubectl busybox-lean starship bottom dust fs fzf jq lsd procs ripgrep sudo zoxide ghq posh-git
+      - scoop install task kubectl busybox-lean starship bottom dust fd fzf jq lsd procs ripgrep sudo zoxide ghq posh-git
     silent: true
   generate-completion:
     cmds:
