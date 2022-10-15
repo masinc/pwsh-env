@@ -24,12 +24,17 @@ if (Test-Path "$PSScriptRoot\.path") {
 }
 
 # append \bins\* to the PATH environment variable
-Get-ChildItem -Directory "$PSScriptRoot\bins"
-| ForEach-Object { $env:PATH += ";" + $_.FullName }
+if (Test-Path "$PSScriptRoot\bins") {
+    Get-ChildItem -Directory "$PSScriptRoot\bins"
+    | ForEach-Object { $env:PATH += ";" + $_.FullName }
+}
+
 
 # load cmdlet.d\*.ps1
-Get-ChildItem "$PSScriptRoot\cmdlet.d\*.ps1"
-| ForEach-Object { . $_.FullName }
+if (Test-Path "$PSScriptRoot\cmdlet.d\") {
+    Get-ChildItem "$PSScriptRoot\cmdlet.d\*.ps1"
+    | ForEach-Object { . $_.FullName }
+}
 
 # load init.d\*.ps1
 Get-ChildItem "$PSScriptRoot\init.d\*.ps1"
