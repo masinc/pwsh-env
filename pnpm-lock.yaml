@@ -2,12 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   aws-cdk: ^2.47.0
-  cdk8s-cli: ^2.1.23
+  cdk8s-cli: ^2.1.25
   quicktype: ^15.1.0
 
 dependencies:
   aws-cdk: 2.47.0
-  cdk8s-cli: 2.1.23
+  cdk8s-cli: 2.1.25
   quicktype: 15.1.0
 
 packages:
@@ -206,22 +206,22 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
-  /cdk8s-cli/2.1.23:
-    resolution: {integrity: sha512-exftQ0AUyoZREBVi5rAuCC2QbmtH3OtugY9Ckj4aZ0J0gxzLCw8vpH73mnxOVlar5JjfONQtH3kkTU4KKUU9rQ==}
+  /cdk8s-cli/2.1.25:
+    resolution: {integrity: sha512-/Kf4SkXCOxlZ2vNrHOri4iKx8v/U6XxpCJXGeCAKiXgZMVVTvZTrdBzQZx0oZJ21xvtYF0uT05pe6tU58+wbtg==}
     engines: {node: '>= 14.17.0'}
     hasBin: true
     dependencies:
       '@types/node': 14.18.32
       ajv: 8.11.0
-      cdk8s: 2.5.25_constructs@10.1.137
-      cdk8s-plus-25: 2.0.0-rc.20_lirjtarmtvgeuu7andnsfz7tre
+      cdk8s: 2.5.26_constructs@10.1.138
+      cdk8s-plus-25: 2.0.0-rc.22_ubpww64ncz7h7ile5ler5xhx7e
       codemaker: 1.70.0
       colors: 1.4.0
-      constructs: 10.1.137
+      constructs: 10.1.138
       fs-extra: 8.1.0
       jsii-pacmak: 1.70.0
-      jsii-srcmak: 0.1.711
-      json2jsii: 0.3.160
+      jsii-srcmak: 0.1.712
+      json2jsii: 0.3.161
       semver: 7.3.8
       sscaff: 1.2.274
       table: 6.8.0
@@ -231,26 +231,26 @@ packages:
       - supports-color
     dev: false
 
-  /cdk8s-plus-25/2.0.0-rc.20_lirjtarmtvgeuu7andnsfz7tre:
-    resolution: {integrity: sha512-9cLcFik+YcHhMQtWRhjy6gc9JRvYvlRAcU+BQqHIzAomuZqYQRGxC2H601E8cFkXLwsVz9yJKKSAtpMQsRcRzQ==}
+  /cdk8s-plus-25/2.0.0-rc.22_ubpww64ncz7h7ile5ler5xhx7e:
+    resolution: {integrity: sha512-PXFpxTTEDNFj14f/JYE2++GFRG9TOeeOlXOJpxSaaPqBYhkkZ/lSfrK7pu3yew86DVGYCxirEYlpMKTTcao8lQ==}
     engines: {node: '>= 14.17.0'}
     peerDependencies:
-      cdk8s: ^2.5.24
-      constructs: ^10.1.136
+      cdk8s: ^2.5.26
+      constructs: ^10.1.138
     dependencies:
-      cdk8s: 2.5.25_constructs@10.1.137
-      constructs: 10.1.137
+      cdk8s: 2.5.26_constructs@10.1.138
+      constructs: 10.1.138
     dev: false
     bundledDependencies:
       - minimatch
 
-  /cdk8s/2.5.25_constructs@10.1.137:
-    resolution: {integrity: sha512-RFfK9KKykqv3oAtzfEz791Vi+nbvhxgQKCQIaimZ3x0sQMslT+OwmkrHxyGoG6cnZUVJStsyG3W75pG7yrPI3A==}
+  /cdk8s/2.5.26_constructs@10.1.138:
+    resolution: {integrity: sha512-KRiZMDRaK4To9NcpI9l/qFjO+XFkNvDI5SMKxJ4eYXKBC+jKkuzggCjikWadSRdxzJoIxCHD1317sXhYA53rVw==}
     engines: {node: '>= 14.17.0'}
     peerDependencies:
       constructs: ^10
     dependencies:
-      constructs: 10.1.137
+      constructs: 10.1.138
     dev: false
     bundledDependencies:
       - fast-json-patch
@@ -390,8 +390,8 @@ packages:
       typedarray: 0.0.6
     dev: false
 
-  /constructs/10.1.137:
-    resolution: {integrity: sha512-jRuNdceHnCB1JRybA1QQL8ZPI704I6jvQmNgyhen3dvQPYfBkhbyNGVabnLPd5IDnnW4Q5y8XkYugLX2hwnLmg==}
+  /constructs/10.1.138:
+    resolution: {integrity: sha512-Bf0wkcGFphvAcm1ci+0yEJvPS9n+99bo3esiuRviAd9bYErOb39msZdfgULmoiRv0612x0xL2accTVESnFG0Vw==}
     engines: {node: '>= 14.17.0'}
     dev: false
 
@@ -889,14 +889,14 @@ packages:
       semver: 7.3.8
       semver-intersect: 1.4.0
       typescript: 3.9.10
-      workerpool: 6.2.1
+      workerpool: 6.3.0
       yargs: 16.2.0
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /jsii-srcmak/0.1.711:
-    resolution: {integrity: sha512-VqIqymndMrvoYdr8ek5ul99Qy5hdzLHEXiMJ7jGEnzvHTTwjOBes0TV+lvGeZIic9Xox0ZmzwcXLK6KfSj+KSg==}
+  /jsii-srcmak/0.1.712:
+    resolution: {integrity: sha512-nO8c8afixW+VmxVx4LKfA7Xvp7LjRYX/KWBKxG5J2qfy8qJ7sK0hEaiHGjfdOu/+P/uSNjZV4VbiboSkzVGafA==}
     hasBin: true
     dependencies:
       fs-extra: 9.1.0
@@ -944,8 +944,8 @@ packages:
       jsonify: 0.0.1
     dev: false
 
-  /json2jsii/0.3.160:
-    resolution: {integrity: sha512-QYZ0hGJuxBS9o+6Ojy6hNubimhB2s5CSpRV2Z/Llsn+GnTc/WlhVp2LQo8MxFQaBXv5hgRglSb7K+0amV9SsuQ==}
+  /json2jsii/0.3.161:
+    resolution: {integrity: sha512-AusnyalScfFgIYRQRRbvM/aBysHNG82qdqB3bGY3jAJ0iKiXOROiYa1HtInGrE0bJ6Y5l9gr9VqZIuraCbfyzw==}
     engines: {node: '>= 14.17.0'}
     dependencies:
       camelcase: 6.3.0
@@ -1819,8 +1819,8 @@ packages:
       typical: 2.6.1
     dev: false
 
-  /workerpool/6.2.1:
-    resolution: {integrity: sha512-ILEIE97kDZvF9Wb9f6h5aXK4swSlKGUcOEGiIYb2OOu/IrDU9iwj0fD//SsA6E5ibwJxpEvhullJY4Sl4GcpAw==}
+  /workerpool/6.3.0:
+    resolution: {integrity: sha512-2rVusseHGwxEEESx/szO2SHfi982WQavL2YlWGHsZE2ynZ4gaHT7kmCXph9k9fUivKOwx7PBn6vn4nXUxxdKcw==}
     dev: false
 
   /wrap-ansi/2.1.0:
