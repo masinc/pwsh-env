@@ -1,7 +1,7 @@
 {
     "dependencies": {
         "aws-cdk": "^2.50.0",
-        "cdk8s-cli": "^2.1.40",
+        "cdk8s-cli": "^2.1.42",
         "quicktype": "^15.1.0"
     }
 }
