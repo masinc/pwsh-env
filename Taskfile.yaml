@@ -7,7 +7,8 @@ tasks:
     cmds:
       - scoop bucket add extras
       - scoop update
-      - scoop install task kubectl busybox starship bottom dust fd fzf jq lsd procs ripgrep gsudo zoxide ghq posh-git
+      - scoop install task kubectl busybox starship bottom dust fd fzf jq lsd procs ripgrep gsudo zoxide ghq
+      - PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
       - pwsh -File ./install-deps.ps1
     silent: true
   generate-completion:
@@ -23,8 +24,9 @@ tasks:
   update:
     deps:
       - generate-completion
-    cmds:
+    cmds:      
       - pnpm update
+      - PowerShellGet\Update-Module posh-git
   clean:
     cmds:
       - rm -rf bins/
