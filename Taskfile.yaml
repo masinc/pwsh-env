@@ -5,6 +5,7 @@ version: "3"
 tasks:
   install-deps:
     cmds:
+      - scoop bucket add extras
       - scoop update
       - scoop install task kubectl busybox starship bottom dust fd fzf jq lsd procs ripgrep gsudo zoxide ghq posh-git
       - pwsh -File ./install-deps.ps1
