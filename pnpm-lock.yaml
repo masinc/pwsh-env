@@ -1,13 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
-  aws-cdk: ^2.55.0
-  cdk8s-cli: ^2.1.76
+  aws-cdk: ^2.57.0
+  cdk8s-cli: ^2.1.89
   quicktype: ^15.1.0
 
 dependencies:
-  aws-cdk: 2.55.0
-  cdk8s-cli: 2.1.76
+  aws-cdk: 2.57.0
+  cdk8s-cli: 2.1.89
   quicktype: 15.1.0
 
 packages:
@@ -65,8 +65,8 @@ packages:
       fastq: 1.14.0
     dev: false
 
-  /@types/node/14.18.34:
-    resolution: {integrity: sha512-hcU9AIQVHmPnmjRK+XUUYlILlr9pQrsqSrwov/JK1pnf3GTQowVBhx54FbvM0AU/VXGH4i3+vgXS5EguR7fysA==}
+  /@types/node/14.18.36:
+    resolution: {integrity: sha512-FXKWbsJ6a1hIrRxv+FoukuHnGTgEzKYGi7kilfMae96AL9UNkPFNWJEEYWzdRI9ooIkbr4AKldyuSTLql06vLQ==}
     dev: false
 
   /@xmldom/xmldom/0.8.6:
@@ -142,8 +142,8 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: false
 
-  /aws-cdk/2.55.0:
-    resolution: {integrity: sha512-SlsaKh1tEiFLWas99OffxoTLugkEZZHY552QeY4ZPXJaUx9kocGYc9s13IO8Y9/cBfoQVvh2KLev4J2+63vKyg==}
+  /aws-cdk/2.57.0:
+    resolution: {integrity: sha512-9tS2ht8su7kLmYLcOumfjTulGlHS2zBToi6f4z/LoIBYTwx4WbBguZhhGRvdtfEx8HLoMUgwC14P/IwSysuxmQ==}
     engines: {node: '>= 14.15.0'}
     hasBin: true
     optionalDependencies:
@@ -206,22 +206,22 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
-  /cdk8s-cli/2.1.76:
-    resolution: {integrity: sha512-a5exOGNYdmGjTlvWeeaweGPNzkaqqh0kMMvfM+fqlncp4DF1Do25pBdzJujZcTggYpNfHpwW4PIh2DgJ+IlH1g==}
+  /cdk8s-cli/2.1.89:
+    resolution: {integrity: sha512-3ocn3rJ2JU54N9qsbtpXTFe0WkY94Y/xKrWXSNC/xeLzjJvAgjOol3OVxUtjaJ4Pc3FyLG+CgvIkIAHHpHWHYA==}
     engines: {node: '>= 14.17.0'}
     hasBin: true
     dependencies:
-      '@types/node': 14.18.34
+      '@types/node': 14.18.36
       ajv: 8.11.2
-      cdk8s: 2.5.75_constructs@10.1.190
-      cdk8s-plus-25: 2.0.60_we7egh2dsegxluvjrstrdwbhei
+      cdk8s: 2.5.87_constructs@10.1.202
+      cdk8s-plus-25: 2.3.8_xkbdq3qszeozgm2fr3efhp66zm
       codemaker: 1.72.0
       colors: 1.4.0
-      constructs: 10.1.190
+      constructs: 10.1.202
       fs-extra: 8.1.0
       jsii-pacmak: 1.72.0
-      jsii-srcmak: 0.1.763
-      json2jsii: 0.3.213
+      jsii-srcmak: 0.1.776
+      json2jsii: 0.3.226
       semver: 7.3.8
       sscaff: 1.2.274
       table: 6.8.1
@@ -231,26 +231,26 @@ packages:
       - supports-color
     dev: false
 
-  /cdk8s-plus-25/2.0.60_we7egh2dsegxluvjrstrdwbhei:
-    resolution: {integrity: sha512-tvB051Pljx88dXCwgwahGF1U3bXPMUMZjncVvAsCGD66CycHUoJkZop4zQfr4az3NGg+LdZgDbfgXk488B3yRg==}
+  /cdk8s-plus-25/2.3.8_xkbdq3qszeozgm2fr3efhp66zm:
+    resolution: {integrity: sha512-/2XFRCPe6in6KfaS72U6NNpdGbkFXUjn8qxNNorNOtnB1/c7ElaxnkKOTigSdoP8lmlegB/gNwHI5pyrBuviqw==}
     engines: {node: '>= 14.17.0'}
     peerDependencies:
-      cdk8s: ^2.5.75
-      constructs: ^10.1.190
+      cdk8s: ^2.5.87
+      constructs: ^10.1.202
     dependencies:
-      cdk8s: 2.5.75_constructs@10.1.190
-      constructs: 10.1.190
+      cdk8s: 2.5.87_constructs@10.1.202
+      constructs: 10.1.202
     dev: false
     bundledDependencies:
       - minimatch
 
-  /cdk8s/2.5.75_constructs@10.1.190:
-    resolution: {integrity: sha512-a22675nD2rKgCn5Fp/FxiGVDqWf3Xist6XWATiK01PwHdSZEFesC7TDClh+7L40AqiV3IUbVwpHjQCImp+HjQw==}
+  /cdk8s/2.5.87_constructs@10.1.202:
+    resolution: {integrity: sha512-lydEfzA4fOAViFQbd/fdT7P+v4uvphf+pmOe5YTEzGd8KQkFG9vldCxEmTp+XW90W73IRrc5pRVIqZb/uIzfXw==}
     engines: {node: '>= 14.17.0'}
     peerDependencies:
       constructs: ^10
     dependencies:
-      constructs: 10.1.190
+      constructs: 10.1.202
     dev: false
     bundledDependencies:
       - fast-json-patch
@@ -390,8 +390,8 @@ packages:
       typedarray: 0.0.6
     dev: false
 
-  /constructs/10.1.190:
-    resolution: {integrity: sha512-wGMEBsIKp/tP+b2q3XEtIh/KJPZ2uk7G2XyEbGVEatOo6OQHFhXfBi9BCk8725zuWYP/gZUQJfAvd7KZ+lY5Yw==}
+  /constructs/10.1.202:
+    resolution: {integrity: sha512-5X0AwrA4q2ePtHpXKBpLPmL0wUMDSnk+MYwokr2Q3wzUrZ5kpGRs+e7NLFSwEKaXJJFBW/A6/dKNg7SfM85caA==}
     engines: {node: '>= 14.17.0'}
     dev: false
 
@@ -895,8 +895,8 @@ packages:
       - supports-color
     dev: false
 
-  /jsii-srcmak/0.1.763:
-    resolution: {integrity: sha512-Aw1En2Ssubny1Q0Awu9nPGfBhAynT+gEPPV+97DO2L78VQsvLxj7rnmfJMq6N16rilLAslm1Q/rFUDwrwJhhmA==}
+  /jsii-srcmak/0.1.776:
+    resolution: {integrity: sha512-L9IFOvXjfuvSmQ2tUZSDpSFYdQtPJi+uNsb4kPIGgpopMSYDT7uomfvfP8aTrkry6Bkk8MT9wmOtIGAE6D5p+w==}
     hasBin: true
     dependencies:
       fs-extra: 9.1.0
@@ -944,8 +944,8 @@ packages:
       jsonify: 0.0.1
     dev: false
 
-  /json2jsii/0.3.213:
-    resolution: {integrity: sha512-UcWitI3IWw7FW3LfBEJKpkJ9qW+Sw8dRoBMmwbdOPC5LQovE81i+1aQoFqOSHUkLLBb8KQwxEH1WeHxfCseQLw==}
+  /json2jsii/0.3.226:
+    resolution: {integrity: sha512-o8/+TMvcjgFe4zRn4F5Tn3m7BD1Zeh/WFENAHwKRrAVbBa7N7NINNmH+ya5u0bmOPPzccWnTYZAbcwyB2O2deA==}
     engines: {node: '>= 14.17.0'}
     dependencies:
       camelcase: 6.3.0
@@ -1021,7 +1021,7 @@ packages:
       debug: 4.3.4
       flatted: 3.2.7
       rfdc: 1.3.0
-      streamroller: 3.1.3
+      streamroller: 3.1.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1547,8 +1547,8 @@ packages:
       stream-chain: 2.2.5
     dev: false
 
-  /streamroller/3.1.3:
-    resolution: {integrity: sha512-CphIJyFx2SALGHeINanjFRKQ4l7x2c+rXYJ4BMq0gd+ZK0gi4VT8b+eHe2wi58x4UayBAKx4xtHpXT/ea1cz8w==}
+  /streamroller/3.1.4:
+    resolution: {integrity: sha512-Ha1Ccw2/N5C/IF8Do6zgNe8F3jQo8MPBnMBGvX0QjNv/I97BcNRzK6/mzOpZHHK7DjMLTI3c7Xw7Y1KvdChkvw==}
     engines: {node: '>=8.0'}
     dependencies:
       date-format: 4.0.14
