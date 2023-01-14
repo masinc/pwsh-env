@@ -1,6 +1,6 @@
 # https://taskfile.dev
 
-version: "3" 
+version: "3"
 
 tasks:
   install-deps:
@@ -23,9 +23,9 @@ tasks:
   update:
     deps:
       - generate-completion
-    cmds:      
+    cmds:
       - pnpm update
-      - Update-Module
+      - pwsh -Command Update-Module
   clean:
     cmds:
       - rm -rf bins/
