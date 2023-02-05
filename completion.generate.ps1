@@ -12,3 +12,8 @@ if (Test-Command kubectl) {
 if (Test-Command gh) {
     gh completion -s powershell > "$PSScriptRoot/completion.generated.d/gh.ps1"
 } 
+
+if (Test-Command task) {
+    $p = Split-Path -Parent $(scoop which task)
+    Copy-Item ${p}\completion\ps\task.ps1 "$PSScriptRoot/completion.generated.d/task.ps1"
+}
