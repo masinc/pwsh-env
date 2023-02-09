@@ -5,7 +5,8 @@ if (Test-Command kubectl) {
     kubectl completion powershell > "$PSScriptRoot/completion.generated.d/kubectl.ps1"
 
     # alias k
-    kubectl completion powershell | ForEach-Object { $_ -replace "-CommandName 'kubectl'", "-CommandName 'k'" } | Set-Content "$PSScriptRoot/completion.generated.d/kubectl.ps1"
+    Copy-Item "$PSScriptRoot/completion.generated.d/kubectl.ps1" "$PSScriptRoot/completion.generated.d/k.ps1"
+    kubectl completion powershell | ForEach-Object { $_ -replace "-CommandName 'kubectl'", "-CommandName 'k'" } | Set-Content "$PSScriptRoot/completion.generated.d/k.ps1"
     $_k 
 }
 
