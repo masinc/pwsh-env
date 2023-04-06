@@ -4,6 +4,7 @@
 Set-PSReadLineOption -BellStyle None
 
 # history
+Set-PSReadLineOption -PredictionViewStyle InlineView
 Set-PSReadLineOption -PredictionSource History
 
 
