@@ -17,17 +17,13 @@ tasks:
     deps:
       - install-deps
       - generate-completion
-    cmds:
-      - pnpm install
     silent: true
   update:
     deps:
       - generate-completion
     cmds:
-      - pnpm update
       - pwsh -Command Update-Module
   clean:
     cmds:
       - rm -rf bins/
       - rm -rf init.generated.d/
-      - rm -rf node_modules/
