@@ -1,6 +1,0 @@
-{
-    "dependencies": {
-        "aws-cdk": "^2.83.1",
-        "cdk8s-cli": "^2.2.56"
-    }
-}
