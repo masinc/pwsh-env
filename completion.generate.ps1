@@ -18,3 +18,7 @@ if (Test-Command task) {
     $p = Split-Path -Parent $(scoop which task)
     Copy-Item ${p}\completion\ps\task.ps1 "$PSScriptRoot/completion.generated.d/task.ps1"
 }
+
+if (Test-Command docker) {
+    docker completion powershell > "$PSScriptRoot/completion.generated.d/docker.ps1"
+}
