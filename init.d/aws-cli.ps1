@@ -17,11 +17,7 @@ Register-ArgumentCompleter -Native -CommandName aws -ScriptBlock {
     Remove-Item Env:\COMP_POINT  
 }
 
-function Select-AwsProfile (
-    [Parameter(Mandatory = $false)]
-    [string]
-    $pattern = ""
-) {
+function Select-AwsProfile () {
     $env:AWS_PROFILE = aws configure list-profiles | fzf    
 }
 
