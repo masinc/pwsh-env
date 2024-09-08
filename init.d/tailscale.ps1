@@ -3,3 +3,5 @@ if (-not (Test-Command tailscale)) {
 }
 
 Set-Alias ts tailscale
+
+tailscale completion powershell | Out-String | Invoke-Expression
