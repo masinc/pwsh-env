@@ -5,7 +5,14 @@ Set-PSReadLineOption -BellStyle None
 
 # history
 Set-PSReadLineOption -PredictionViewStyle InlineView
-Set-PSReadLineOption -PredictionSource History
+
+try {
+    Set-PSReadLineOption -PredictionSource History
+}
+catch {
+    # ignore
+}
+
 
 
 # emacs mode
