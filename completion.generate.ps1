@@ -22,3 +22,16 @@ if (Test-Command task) {
 if (Test-Command docker) {
     docker completion powershell > "$PSScriptRoot/completion.generated.d/docker.ps1"
 }
+
+if (Test-Command uv) {
+    uv generate-shell-completion powershell > "$PSScriptRoot/completion.generated.d/uv.ps1"
+}
+
+if (Test-Command rustup) {
+    rustup completions powershell rustup > "$PSScriptRoot/completion.generated.d/rustup.ps1"
+}
+
+# pwsl not supported
+# if (Test-Command cargo) {
+#     rustup completions powershell cargo > "$PSScriptRoot/completion.generated.d/cargo.ps1"
+# }

@@ -41,6 +41,12 @@ if (Test-Path "$PSScriptRoot\cmdlet.d\") {
 Get-ChildItem "$PSScriptRoot\init.d\*.ps1"
 | ForEach-Object { . $_.FullName }
 
+# load completion.d\*.ps1
+if (Test-Path "$PSScriptRoot\completion.d\*.ps1") {
+    Get-ChildItem "$PSScriptRoot\completion.d\*.ps1"
+    | ForEach-Object { . $_.FullName }
+}
+
 # load completion.generate.d\*.ps1
 if (Test-Path "$PSScriptRoot\completion.generated.d\*.ps1") {
     Get-ChildItem "$PSScriptRoot\completion.generated.d\*.ps1"
