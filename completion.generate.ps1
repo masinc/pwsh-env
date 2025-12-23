@@ -31,6 +31,10 @@ if (Test-Command rustup) {
     rustup completions powershell rustup > "$PSScriptRoot/completion.generated.d/rustup.ps1"
 }
 
+if (Test-Command moon) {
+    moon shell-completion --shell powershell > "$PSScriptRoot/completion.generated.d/moon.ps1"
+}
+
 # pwsl not supported
 # if (Test-Command cargo) {
 #     rustup completions powershell cargo > "$PSScriptRoot/completion.generated.d/cargo.ps1"
