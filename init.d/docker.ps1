@@ -1,15 +1,13 @@
-if (-not (Test-Command tailscale)) {
+if (-not (Test-Command docker)) {
     return
 }
 
-Set-Alias ts tailscale
-
-Register-LazyArgumentCompleter -CommandName 'tailscale' -Generator {
+Register-LazyArgumentCompleter -CommandName 'docker' -Generator {
     $script:captured = $null
     function Register-ArgumentCompleter {
         param([string[]]$CommandName, [scriptblock]$ScriptBlock, [switch]$Native)
         $script:captured = $ScriptBlock
     }
-    Invoke-Expression (& tailscale completion powershell | Out-String)
+    Invoke-Expression (& docker completion powershell | Out-String)
     return $script:captured
 }

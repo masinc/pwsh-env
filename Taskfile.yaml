@@ -10,17 +10,11 @@ tasks:
       - scoop install task kubectl busybox starship bottom dust fd fzf jq lsd procs ripgrep gsudo zoxide ghq
       - pwsh -File ./install-deps.ps1
     silent: true
-  generate-completion:
-    cmds:
-      - pwsh -File ./completion.generate.ps1
   install:
     deps:
       - install-deps
-      - generate-completion
     silent: true
   update:
-    deps:
-      - generate-completion
     cmds:
       - pwsh -Command Update-Module
   clean:

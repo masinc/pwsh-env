@@ -1,15 +1,13 @@
-if (-not (Test-Command tailscale)) {
+if (-not (Test-Command gh)) {
     return
 }
 
-Set-Alias ts tailscale
-
-Register-LazyArgumentCompleter -CommandName 'tailscale' -Generator {
+Register-LazyArgumentCompleter -CommandName 'gh' -Generator {
     $script:captured = $null
     function Register-ArgumentCompleter {
         param([string[]]$CommandName, [scriptblock]$ScriptBlock, [switch]$Native)
         $script:captured = $ScriptBlock
     }
-    Invoke-Expression (& tailscale completion powershell | Out-String)
+    Invoke-Expression (& gh completion -s powershell | Out-String)
     return $script:captured
 }
