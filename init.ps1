@@ -3,7 +3,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # load func.ps1
-. (Join-Path $PSScriptRoot "func.ps1")
+. ([scriptblock]::Create((Get-Content (Join-Path $PSScriptRoot "func.ps1") -Raw)))
 
 # import env
 if (Test-Path "$PSScriptRoot\.env.ps1") {
@@ -33,19 +33,19 @@ if (Test-Path "$PSScriptRoot\bins") {
 # load cmdlet.d\*.ps1
 if (Test-Path "$PSScriptRoot\cmdlet.d\") {
     Get-ChildItem "$PSScriptRoot\cmdlet.d\*.ps1"
-    | ForEach-Object { . $_.FullName }
+    | ForEach-Object { . ([scriptblock]::Create((Get-Content $_.FullName -Raw))) }
 }
 
 # load init.d\*.ps1
 Get-ChildItem "$PSScriptRoot\init.d\*.ps1"
-| ForEach-Object { . $_.FullName }
+| ForEach-Object { . ([scriptblock]::Create((Get-Content $_.FullName -Raw))) }
 
 # load completion.d\*.ps1
 if (Test-Path "$PSScriptRoot\completion.d\*.ps1") {
     Get-ChildItem "$PSScriptRoot\completion.d\*.ps1"
-    | ForEach-Object { . $_.FullName }
+    | ForEach-Object { . ([scriptblock]::Create((Get-Content $_.FullName -Raw))) }
 }
 
 # load alias.d\*.ps1
 Get-ChildItem "$PSScriptRoot\alias.d\*.ps1"
-| ForEach-Object { . $_.FullName }
+| ForEach-Object { . ([scriptblock]::Create((Get-Content $_.FullName -Raw))) }

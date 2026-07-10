@@ -1,10 +1,7 @@
 # https://docs.microsoft.com/en-us/powershell/module/psreadline/about/about_psreadline
 
-# disable beep
-Set-PSReadLineOption -BellStyle None
-
-# history
-Set-PSReadLineOption -PredictionViewStyle InlineView
+# disable beep / history / emacs mode / history search
+Set-PSReadLineOption -BellStyle None -PredictionViewStyle InlineView -EditMode Emacs -HistorySearchCursorMovesToEnd
 
 try {
     Set-PSReadLineOption -PredictionSource History
@@ -12,14 +9,6 @@ try {
 catch {
     # ignore
 }
-
-
-
-# emacs mode
-Set-PSReadLineOption -EditMode Emacs
-
-# allow history search
-Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
