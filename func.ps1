@@ -187,16 +187,16 @@ function Register-LazyArgumentCompleter {
         $Generator
     )
 
-    if (-not $script:LazyCompletionStore) {
-        $script:LazyCompletionStore = @{}
-    }
-
     Register-ArgumentCompleter -Native -CommandName $CommandName -ScriptBlock {
         param($wordToComplete, $commandAst, $cursorPosition)
 
+        if (-not $script:LazyCompletionStore) {
+            $script:LazyCompletionStore = @{}
+        }
+
         if (-not $script:LazyCompletionStore.ContainsKey($CommandName)) {
             try {
-                $completer = & $Generator
+                $completer = . $Generator
                 $script:LazyCompletionStore[$CommandName] = $completer
             }
             catch {
@@ -206,9 +206,9 @@ function Register-LazyArgumentCompleter {
 
         $completer = $script:LazyCompletionStore[$CommandName]
         if ($completer -is [scriptblock]) {
-            & $completer -wordToComplete $wordToComplete -commandAst $commandAst -cursorPosition $cursorPosition
+            & $completer $wordToComplete $commandAst $cursorPosition
         }
-    }
+    }.GetNewClosure()
 }
 
 $script:DeferredPromptInitialized = $false
