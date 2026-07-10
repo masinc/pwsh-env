@@ -1,5 +1,5 @@
-if (-not (Test-Command git)) {
-    return
+if (Test-Command git) {
+    Register-DeferredPromptHook {
+        Import-Module git-completion
+    }
 }
-
-Import-Module posh-git

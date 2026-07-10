@@ -1,24 +1,24 @@
-if (-not (Test-Command aws)) {
-    return
-}
-
-
-Register-ArgumentCompleter -Native -CommandName aws -ScriptBlock {
-    param($commandName, $wordToComplete, $cursorPosition)
-    $env:COMP_LINE = $wordToComplete
-    if ($env:COMP_LINE.Length -lt $cursorPosition) {
-        $env:COMP_LINE = $env:COMP_LINE + " "
+Register-LazyArgumentCompleter -CommandName 'aws' -Generator {
+    if (-not (Test-Command aws)) {
+        return $null
     }
-    $env:COMP_POINT = $cursorPosition
-    aws_completer.exe | ForEach-Object {
-        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    return {
+        param($commandName, $wordToComplete, $cursorPosition)
+        $env:COMP_LINE = $wordToComplete
+        if ($env:COMP_LINE.Length -lt $cursorPosition) {
+            $env:COMP_LINE = $env:COMP_LINE + " "
+        }
+        $env:COMP_POINT = $cursorPosition
+        aws_completer.exe | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+        Remove-Item Env:\COMP_LINE
+        Remove-Item Env:\COMP_POINT
     }
-    Remove-Item Env:\COMP_LINE     
-    Remove-Item Env:\COMP_POINT  
 }
 
 function Select-AwsProfile () {
-    $env:AWS_PROFILE = aws configure list-profiles | fzf    
+    $env:AWS_PROFILE = aws configure list-profiles | fzf
 }
 
 Set-Alias aws-profile Select-AwsProfile

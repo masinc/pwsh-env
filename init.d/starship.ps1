@@ -1,6 +1,4 @@
-if (-not (Test-Command starship)) {
-    return
+if (Test-Command starship) {
+    Invoke-Expression (&starship init powershell)
+    Register-DeferredPromptHook {}
 }
-
-
-Invoke-Expression (&starship init powershell)

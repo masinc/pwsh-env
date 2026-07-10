@@ -1,8 +1,7 @@
-if (-not (Test-Command docker)) {
-    return
-}
-
 Register-LazyArgumentCompleter -CommandName 'docker' -Generator {
+    if (-not (Test-Command docker)) {
+        return $null
+    }
     $script:captured = $null
     function Register-ArgumentCompleter {
         param([string[]]$CommandName, [scriptblock]$ScriptBlock, [switch]$Native)

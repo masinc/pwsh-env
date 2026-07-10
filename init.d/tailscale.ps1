@@ -1,10 +1,7 @@
-if (-not (Test-Command tailscale)) {
-    return
-}
-
-Set-Alias ts tailscale
-
 Register-LazyArgumentCompleter -CommandName 'tailscale' -Generator {
+    if (-not (Test-Command tailscale)) {
+        return $null
+    }
     $script:captured = $null
     function Register-ArgumentCompleter {
         param([string[]]$CommandName, [scriptblock]$ScriptBlock, [switch]$Native)

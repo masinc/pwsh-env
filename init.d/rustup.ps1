@@ -1,8 +1,7 @@
-if (-not (Test-Command rustup)) {
-    return
-}
-
 Register-LazyArgumentCompleter -CommandName 'rustup' -Generator {
+    if (-not (Test-Command rustup)) {
+        return $null
+    }
     $script:captured = $null
     function Register-ArgumentCompleter {
         param([string[]]$CommandName, [scriptblock]$ScriptBlock, [switch]$Native)

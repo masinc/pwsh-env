@@ -1,5 +1,3 @@
-if (-not (Test-Command antigravity)) {
-    return
+if (Test-Command antigravity) {
+    Set-Alias -Name atg -Value antigravity
 }
-
-Set-Alias -Name atg -Value antigravity

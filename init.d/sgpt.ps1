@@ -1,5 +1,3 @@
-if (-not (Test-Command sgpt)) {
-    return
+if (Test-Command sgpt) {
+    Set-Alias -Name q -Value sgpt.exe
 }
-
-Set-Alias -Name q -Value sgpt.exe

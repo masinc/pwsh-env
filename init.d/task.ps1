@@ -1,8 +1,7 @@
-if (-not (Test-Command task)) {
-    return
-}
-
 Register-LazyArgumentCompleter -CommandName 'task' -Generator {
+    if (-not (Test-Command task)) {
+        return $null
+    }
     $script:captured = $null
     function Register-ArgumentCompleter {
         param([string[]]$CommandName, [scriptblock]$ScriptBlock, [switch]$Native)

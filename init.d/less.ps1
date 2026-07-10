@@ -1,7 +1,4 @@
-if (-not (Test-Command less)) {
-    return
+if (Test-Command less) {
+    $env:PAGER = "less.exe"
+    [System.Environment]::SetEnvironmentVariable("LESS", "-i -M -R")
 }
-
-$env:PAGER = "less.exe"
-[System.Environment]::SetEnvironmentVariable("LESS", "-i -M -R")
-

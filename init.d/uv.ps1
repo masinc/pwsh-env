@@ -1,10 +1,9 @@
-if (-not (Test-Command uv)) {
-    return
-}
-
 $env:UV_CACHE_DIR = "d:\cache\uv"
 
 Register-LazyArgumentCompleter -CommandName 'uv' -Generator {
+    if (-not (Test-Command uv)) {
+        return $null
+    }
     $script:captured = $null
     function Register-ArgumentCompleter {
         param([string[]]$CommandName, [scriptblock]$ScriptBlock, [switch]$Native)

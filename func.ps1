@@ -4,8 +4,7 @@ function Test-Command(
     )]
     $Name
 ) {
-    Get-Command "$Name" >$null 2>$null
-    return $?
+    return [bool](Get-Command "$Name" -ErrorAction SilentlyContinue)
 }
 
 function Test-Directory(
@@ -208,6 +207,40 @@ function Register-LazyArgumentCompleter {
         $completer = $script:LazyCompletionStore[$CommandName]
         if ($completer -is [scriptblock]) {
             & $completer -wordToComplete $wordToComplete -commandAst $commandAst -cursorPosition $cursorPosition
+        }
+    }
+}
+
+$script:DeferredPromptInitialized = $false
+$script:DeferredPromptActions = [System.Collections.Generic.List[scriptblock]]::new()
+
+function Register-DeferredPromptHook {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [scriptblock]
+        $Action
+    )
+
+    $script:DeferredPromptActions.Add($Action)
+
+    if (-not $script:DeferredPromptInitialized) {
+        $script:DeferredPromptInitialized = $true
+    }
+
+    $originalPrompt = $Function:prompt
+
+    function global:prompt {
+        $actions = $script:DeferredPromptActions.ToArray()
+        $script:DeferredPromptActions.Clear()
+        foreach ($deferredAction in $actions) {
+            & $deferredAction
+        }
+        if ($originalPrompt) {
+            & $originalPrompt
+        }
+        else {
+            "PS $($executionContext.SessionState.Path.CurrentLocation)> "
         }
     }
 }

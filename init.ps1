@@ -3,7 +3,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # load func.ps1
-. ([scriptblock]::Create((Get-Content (Join-Path $PSScriptRoot "func.ps1") -Raw)))
+. (Join-Path $PSScriptRoot "func.ps1")
 
 # import env
 if (Test-Path "$PSScriptRoot\.env.ps1") {
@@ -37,8 +37,10 @@ if (Test-Path "$PSScriptRoot\cmdlet.d\") {
 }
 
 # load init.d\*.ps1
-Get-ChildItem "$PSScriptRoot\init.d\*.ps1"
-| ForEach-Object { . ([scriptblock]::Create((Get-Content $_.FullName -Raw))) }
+$initdScripts = Get-ChildItem "$PSScriptRoot\init.d\*.ps1"
+| ForEach-Object { Get-Content $_.FullName -Raw }
+| Join-String -Separator "`n"
+. ([scriptblock]::Create($initdScripts))
 
 # load completion.d\*.ps1
 if (Test-Path "$PSScriptRoot\completion.d\*.ps1") {

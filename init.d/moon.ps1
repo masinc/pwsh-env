@@ -1,8 +1,7 @@
-if (-not (Test-Command moon)) {
-    return
-}
-
 Register-LazyArgumentCompleter -CommandName 'moon' -Generator {
+    if (-not (Test-Command moon)) {
+        return $null
+    }
     $script:captured = $null
     function Register-ArgumentCompleter {
         param([string[]]$CommandName, [scriptblock]$ScriptBlock, [switch]$Native)
